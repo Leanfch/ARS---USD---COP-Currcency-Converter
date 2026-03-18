@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conversor de moneda offline: Pesos colombianos, Dólares y Pesos argentinos." />
+    <meta name="theme-color" content="#1a1a2e" />
+    <title>Conversor COP · USD · ARS</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Conversor de moneda</h1>
+      <p>COP &middot; USD &middot; ARS</p>
+    </header>
+
+    <main>
+      <form id="converter-form" novalidate aria-label="Conversor de moneda">
+
+        <section aria-labelledby="label-cop">
+          <label id="label-cop" for="cop">Pesos colombianos (COP)</label>
+          <input
+            type="number"
+            id="cop"
+            name="cop"
+            inputmode="decimal"
+            placeholder="0"
+            min="0"
+            aria-describedby="rate-cop"
+          />
+        </section>
+
+        <section aria-labelledby="label-usd">
+          <label id="label-usd" for="usd">Dólares estadounidenses (USD)</label>
+          <input
+            type="number"
+            id="usd"
+            name="usd"
+            inputmode="decimal"
+            placeholder="0"
+            min="0"
+            aria-describedby="rate-usd"
+          />
+        </section>
+
+        <section aria-labelledby="label-ars">
+          <label id="label-ars" for="ars">Pesos argentinos (ARS)</label>
+          <input
+            type="number"
+            id="ars"
+            name="ars"
+            inputmode="decimal"
+            placeholder="0"
+            min="0"
+            aria-describedby="rate-ars"
+          />
+        </section>
+
+      </form>
+    </main>
+
+    <footer>
+      <p id="rate-cop rate-usd rate-ars" aria-live="polite">
+        Tasas de referencia: 1 USD = 3.800 COP &nbsp;&middot;&nbsp; 1 USD = 1.420 ARS
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
