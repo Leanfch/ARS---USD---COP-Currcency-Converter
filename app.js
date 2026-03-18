@@ -11,10 +11,8 @@ const inputs = {
   ars: document.getElementById('ars'),
 };
 
-// Convierte desde USD hacia las otras monedas
 function convertFrom(source, value) {
   if (value === '' || isNaN(value)) {
-    // Limpiar los otros campos si el input está vacío
     Object.keys(inputs).forEach((key) => {
       if (key !== source) inputs[key].value = '';
     });
@@ -41,7 +39,6 @@ function round(num) {
   return Math.round(num * 100) / 100;
 }
 
-// Escuchar cambios en cada input
 Object.keys(inputs).forEach((key) => {
   inputs[key].addEventListener('input', (e) => {
     convertFrom(key, e.target.value);
