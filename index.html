@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Conversor de moneda offline: Pesos colombianos, Dólares y Pesos argentinos." />
     <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- PWA -->
     <title>Conversor COP · USD · ARS</title>
     <link rel="manifest" href="manifest.json" />
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Conversor" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.svg" />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -19,49 +28,68 @@
       <form id="converter-form" novalidate aria-label="Conversor de moneda">
 
         <section aria-labelledby="label-cop">
-          <label id="label-cop" for="cop">Pesos colombianos (COP)</label>
-          <input
-            type="number"
-            id="cop"
-            name="cop"
-            inputmode="decimal"
-            placeholder="0"
-            min="0"
-            aria-describedby="rate-cop"
-          />
+          <label id="label-cop" for="cop">
+            <span aria-hidden="true">🇨🇴</span> Pesos colombianos (COP)
+          </label>
+          <div class="input-row">
+            <span class="currency-code" aria-hidden="true">COP</span>
+            <input
+              type="number"
+              id="cop"
+              name="cop"
+              inputmode="decimal"
+              placeholder="0"
+              min="0"
+              aria-describedby="rates-info"
+            />
+          </div>
         </section>
 
         <section aria-labelledby="label-usd">
-          <label id="label-usd" for="usd">Dólares estadounidenses (USD)</label>
-          <input
-            type="number"
-            id="usd"
-            name="usd"
-            inputmode="decimal"
-            placeholder="0"
-            min="0"
-            aria-describedby="rate-usd"
-          />
+          <label id="label-usd" for="usd">
+            <span aria-hidden="true">🇺🇸</span> Dólares estadounidenses (USD)
+          </label>
+          <div class="input-row">
+            <span class="currency-code" aria-hidden="true">USD</span>
+            <input
+              type="number"
+              id="usd"
+              name="usd"
+              inputmode="decimal"
+              placeholder="0"
+              min="0"
+              aria-describedby="rates-info"
+            />
+          </div>
         </section>
 
         <section aria-labelledby="label-ars">
-          <label id="label-ars" for="ars">Pesos argentinos (ARS)</label>
-          <input
-            type="number"
-            id="ars"
-            name="ars"
-            inputmode="decimal"
-            placeholder="0"
-            min="0"
-            aria-describedby="rate-ars"
-          />
+          <label id="label-ars" for="ars">
+            <span aria-hidden="true">🇦🇷</span> Pesos argentinos (ARS)
+          </label>
+          <div class="input-row">
+            <span class="currency-code" aria-hidden="true">ARS</span>
+            <input
+              type="number"
+              id="ars"
+              name="ars"
+              inputmode="decimal"
+              placeholder="0"
+              min="0"
+              aria-describedby="rates-info"
+            />
+          </div>
         </section>
 
       </form>
+
+      <button id="clear-btn" type="button" aria-label="Limpiar todos los campos">
+        Limpiar
+      </button>
     </main>
 
     <footer>
-      <p id="rate-cop rate-usd rate-ars" aria-live="polite">
+      <p id="rates-info">
         Tasas de referencia: 1 USD = 3.800 COP &nbsp;&middot;&nbsp; 1 USD = 1.420 ARS
       </p>
     </footer>
