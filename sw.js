@@ -1,4 +1,4 @@
-const CACHE_NAME = 'conversor-v2';
+const CACHE_NAME = 'conversor-v3';
 
 const ASSETS = [
   '/',
@@ -8,6 +8,9 @@ const ASSETS = [
   '/manifest.json',
   '/icons/icon-192.svg',
   '/icons/icon-512.svg',
+  '/flags/colombia.jpg',
+  '/flags/usa.jpg',
+  '/flags/argentina.webp',
 ];
 
 // Instalación: cachear todos los archivos
