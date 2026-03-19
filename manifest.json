@@ -1,6 +1,6 @@
 {
   "name": "Conversor COP · USD · ARS",
-  "short_name": "Conversor",
+  "short_name": "COP - USD - ARS",
   "description": "Conversor de moneda offline entre Pesos colombianos, Dólares y Pesos argentinos.",
   "start_url": "/",
   "display": "standalone",

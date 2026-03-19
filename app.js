@@ -1,6 +1,6 @@
 // Tasas de cambio fijas
 const RATES = {
-  USD_TO_COP: 3800,
+  USD_TO_COP: 3700,
   USD_TO_ARS: 1420,
 };
 

@@ -91,12 +91,12 @@
 
     <footer>
       <p id="rates-info">
-        Tasas de referencia: 1 USD = 3.800 COP &nbsp;&middot;&nbsp; 1 USD = 1.420 ARS
+        Tasas de referencia: 1 USD = 3.700 COP &nbsp;&middot;&nbsp; 1 USD = 1.420 ARS
       </p>
     </footer>
 
-    <script src="app.js"></script>
-    <script>
+    <script defer src="app.js"></script>
+    <script defer>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js');
